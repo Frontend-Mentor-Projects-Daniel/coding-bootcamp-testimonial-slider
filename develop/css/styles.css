@@ -1,4 +1,51 @@
 /**------------------- 
+**     FONTS
+--------------------*/
+/* inter-regular - latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Inter Regular'), local('Inter-Regular'),
+    url('../assets/fonts/inter-v12-latin-regular.woff2') format('woff2'),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url('../assets/fonts/inter-v12-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* inter-300 - latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Inter Light'), local('Inter-Light'),
+    url('../assets/fonts/inter-v12-latin-300.woff2') format('woff2'),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url('../assets/fonts/inter-v12-latin-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* inter-500 - latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Inter Medium'), local('Inter-Medium'),
+    url('../assets/fonts/inter-v12-latin-500.woff2') format('woff2'),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url('../assets/fonts/inter-v12-latin-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* inter-700 - latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Inter Bold'), local('Inter-Bold'),
+    url('../assets/fonts/inter-v12-latin-700.woff2') format('woff2'),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url('../assets/fonts/inter-v12-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/**------------------- 
 **      RESET
 --------------------*/
 *,
@@ -55,23 +102,47 @@ select {
 }
 
 /**------------------- 
-**   CUSTOM PROPS
---------------------*/
-:root {
-  /* COLOURS */
-
-  /* FONT FAMILY */
-
-  /* FONT SIZE */
-
-  /* FONT WEIGHT */
-
-  /* BREAKPOINTS */
-}
-
-/**------------------- 
 **     GLOBAL
 --------------------*/
+:root {
+  --clr-quote: 240, 38%, 20%;
+  --clr-fig-title: 240, 18%, 77%;
+  --hsla: 1;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+blockquote {
+  font-size: 1.125rem;
+  font-size: clamp(
+    1.125rem,
+    0.8169014084507042rem + 1.3145539906103285vw,
+    2rem
+  );
+
+  line-height: 1.5rem;
+}
+
+figcaption {
+  font-size: 0.9375rem;
+  font-size: clamp(
+    0.9375rem,
+    0.8274647887323944rem + 0.4694835680751174vw,
+    1.25rem
+  );
+}
+
+ul {
+  list-style: none;
+}
+
+@media only screen and (min-width: 48em) {
+  blockquote {
+    line-height: 2.75rem;
+  }
+}
 
 /**------------------- 
 **  COMPOSITIONS
@@ -112,10 +183,38 @@ select {
 /**------------------- 
 **    UTILITIES
 --------------------*/
-#hover {
-  display: none;
+/* bg-colour */
+.bg-quote {
+  background-color: hsl(var(--clr-quote), var(--hsla));
 }
 
+.bg-fig-title {
+  background-color: hsl(var(--clr-fig-title), var(--hsla));
+}
+
+/* text-colour */
+.text-quote {
+  color: hsl(var(--clr-quote), var(--hsla));
+}
+
+.text-fig-title {
+  color: hsl(var(--clr-fig-title), var(--hsla));
+}
+
+/* font weights */
+.fw-light {
+  font-weight: 300;
+}
+
+.fw-medium {
+  font-weight: 500;
+}
+
+.fw-bold {
+  font-weight: 700;
+}
+
+/* for screen reader */
 .sr-only {
   position: absolute !important;
   width: 1px !important;
