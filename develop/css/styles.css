@@ -30,11 +30,11 @@ p {
   font-weight: 400;
 }
 /* make images easier to work with */
-img,
+/* img,
 picture {
   max-width: 100%;
   display: block;
-}
+} */
 /* make form elements easier to work with */
 input,
 button,
@@ -70,9 +70,69 @@ select {
 }
 
 /**------------------- 
-**    UTILITIES
+**     GLOBAL
 --------------------*/
 
 /**------------------- 
-**     GENERAL
+**  COMPOSITIONS
+--------------------*/
+/* center horizontally */
+.center {
+  --measure: 90rem;
+
+  box-sizing: content-box;
+  margin-inline: auto;
+  max-inline-size: var(--measure);
+}
+
+/* center vertically */
+.cover {
+  display: flex;
+  flex-direction: column;
+  min-block-size: 100vh;
+  padding: 1rem;
+}
+
+.cover > * {
+  margin-block: 1rem;
+}
+
+.cover > :first-child:not(.centered) {
+  margin-block-start: 0;
+}
+
+.cover > :last-child:not(.centered) {
+  margin-block-end: 0;
+}
+
+.cover > .centered {
+  margin-block: auto;
+}
+
+/**------------------- 
+**    UTILITIES
+--------------------*/
+#hover {
+  display: none;
+}
+
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/**------------------- 
+**     BLOCKS
+--------------------*/
+/** CAROUSEL */
+
+/**------------------- 
+**    EXCEPTIONS
 --------------------*/
