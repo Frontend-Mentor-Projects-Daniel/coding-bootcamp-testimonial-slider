@@ -191,6 +191,8 @@ ul {
 /**------------------- 
 **    UTILITIES
 --------------------*/
+/* animations */
+
 /* bg-colour */
 .bg-quote {
   background-color: hsl(var(--clr-quote), var(--hsla));
@@ -242,22 +244,56 @@ ul {
 .carousel {
 }
 
-/** BUTTONS */
-.carousel-controls {
-}
-
 /** GALLERY */
 .carousel__gallery {
   display: flex;
   justify-content: center;
+
+  overflow-x: scroll;
+  scrollbar-color: #000 #eee;
+  scrollbar-width: thin;
+
+  scroll-behavior: smooth;
 }
 
-/* ul */
+.carousel__gallery:focus {
+  outline: 4px solid skyblue;
+}
+
+/* scrollbar */
+.carousel__gallery::-webkit-scrollbar {
+  height: 0.75rem;
+}
+
+.carousel__gallery::-webkit-scrollbar-track {
+  color: #eee;
+}
+
+.carousel__gallery::-webkit-scrollbar-thumb {
+  color: #000;
+}
+
+/* gallery ul */
 .gallery {
+  display: flex;
+
+  white-space: nowrap;
 }
 
-/** CARD */
+/* cards */
 .card {
+  flex: 0 0 100%;
+
+  /* display: inline-block; */
+  display: flex;
+  justify-content: center;
+  white-space: normal;
+
+  margin-bottom: 1rem;
+}
+
+.card:last-child {
+  margin-left: 1rem;
 }
 
 .card figure {
@@ -270,6 +306,26 @@ ul {
 .card__image {
   grid-column: 1/2;
   grid-row: 1/2;
+
+  position: relative;
+  z-index: -1;
+}
+
+.card__image img {
+  height: auto;
+}
+
+/** BUTTONS */
+.carousel-controls {
+  position: absolute;
+  bottom: 0%;
+  right: 58%;
+
+  display: flex;
+}
+
+.carousel-controls button {
+  cursor: pointer;
 }
 
 .card__text {
@@ -282,6 +338,8 @@ ul {
 .card__name {
   grid-column: 1/2;
   grid-row: 5/6;
+
+  text-align: center;
 }
 
 .card__title {

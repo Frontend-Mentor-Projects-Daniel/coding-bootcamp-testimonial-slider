@@ -35,38 +35,49 @@
 
     <main class="[ centered ]">
       <div class="[ carousel ] [ center ]">
-        <ul class="[ carousel-controls ]" aria-label="carousel controls">
-          <li>
-            <button class="[ previous ]" aria-label="previous slide">
-              <img
-                src="./develop/assets/images/icon-prev.svg"
-                alt=""
-                aria-hidden="true"
-              />
-            </button>
-          </li>
-          <li>
-            <button class="[ next ]" aria-label="next slide">
-              <img
-                src="./develop/assets/images/icon-next.svg"
-                alt=""
-                aria-hidden="true"
-              />
-            </button>
-          </li>
-        </ul>
         <div
           class="[ carousel__gallery ]"
           role="group"
-          aria-label="slider (scroll for more)"
+          aria-label="gallery (scroll for more)"
           tabindex="0"
         >
           <!-- change class visible to a data attribute  -->
           <ul class="[ gallery ]">
+            <!-- CARD 1 -->
             <li class="[ card ] [ visible ]">
               <figure>
-                <div class="[ card__image ]">
-                  <img src="./develop/assets/images/image-tanya.jpg" alt="" />
+                <div class="[ card__image ] [ lazy-image ]">
+                  <img
+                    src="./develop/assets/images/image-tanya.jpg"
+                    alt=""
+                    loading="lazy"
+                    height="540"
+                    class="[ user ]"
+                  />
+
+                  <ul
+                    class="[ carousel-controls ]"
+                    aria-label="carousel controls"
+                  >
+                    <li>
+                      <button class="[ previous ]" aria-label="previous slide">
+                        <img
+                          src="./develop/assets/images/icon-prev.svg"
+                          alt=""
+                          aria-hidden="true"
+                        />
+                      </button>
+                    </li>
+                    <li>
+                      <button class="[ next ]" aria-label="next slide">
+                        <img
+                          src="./develop/assets/images/icon-next.svg"
+                          alt=""
+                          aria-hidden="true"
+                        />
+                      </button>
+                    </li>
+                  </ul>
                 </div>
 
                 <blockquote class="[ card__text ] [ fw-light text-quote ]">
@@ -79,6 +90,59 @@
                   Tanya Sinclair
                   <span class="[ card__title ] [ fw-medium text-fig-title ]"
                     >UX Engineer</span
+                  >
+                </figcaption>
+              </figure>
+            </li>
+
+            <!-- CARD 2 -->
+            <li class="[ card ] [ visible ]">
+              <figure>
+                <div class="[ card__image ] [ lazy-image ]">
+                  <img
+                    src="./develop/assets/images/image-john.jpg"
+                    alt=""
+                    loading="lazy"
+                    height="540"
+                    class="[ user ]"
+                  />
+
+                  <ul
+                    class="[ carousel-controls ]"
+                    aria-label="carousel controls"
+                  >
+                    <li>
+                      <button class="[ previous ]" aria-label="previous slide">
+                        <img
+                          src="./develop/assets/images/icon-prev.svg"
+                          alt=""
+                          aria-hidden="true"
+                        />
+                      </button>
+                    </li>
+                    <li>
+                      <button class="[ next ]" aria-label="next slide">
+                        <img
+                          src="./develop/assets/images/icon-next.svg"
+                          alt=""
+                          aria-hidden="true"
+                        />
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+
+                <blockquote class="[ card__text ] [ fw-light text-quote ]">
+                  If you want to lay the best foundation possible I’d recommend
+                  taking this course. The depth the instructors go into is
+                  incredible. I now feel so confident about starting up as a
+                  professional developer.
+                </blockquote>
+
+                <figcaption class="[ card__name ] [ fw-bold text-quote ]">
+                  John Tarkpor
+                  <span class="[ card__title ] [ fw-medium text-fig-title ]"
+                    >Junior Front-end Developer</span
                   >
                 </figcaption>
               </figure>
