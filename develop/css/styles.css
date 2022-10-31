@@ -308,7 +308,7 @@ ul {
   grid-row: 1/2;
 
   position: relative;
-  z-index: -1;
+  /* z-index: -1; */
 }
 
 .card__image img {
@@ -332,7 +332,9 @@ ul {
   grid-column: 1/2;
   grid-row: 3/4;
 
+  position: relative;
   text-align: center;
+  z-index: 1;
 }
 
 .card__name {
