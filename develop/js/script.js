@@ -1,16 +1,37 @@
-// get a complete list of slides within an array
-// on btn click,
+const prevButtons = document.querySelectorAll('.previous');
+const nextButtons = document.querySelectorAll('.next');
 
-const buttons = document.querySelectorAll('.carousel-controls button');
+// Next/previous controls
+function plusSlides(n) {
+  showSlides((slideIndex += n));
+}
 
-buttons.forEach((button) => {
+function showSlides(n) {
+  let i;
+  let slides = document.querySelectorAll('.card');
+  if (n > slides.length) {
+    slideIndex = 1;
+  }
+  if (n < 1) {
+    slideIndex = slides.length;
+  }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].classList.remove('visible');
+  }
+  slides[slideIndex - 1].classList.add('visible');
+}
+
+prevButtons.forEach((button) => {
   button.addEventListener('click', () => {
-    if (button.classList.contains('previous')) {
-      document.querySelector('.carousel__gallery').scrollLeft -= 300;
-    }
-
-    if (button.classList.contains('next')) {
-      document.querySelector('.carousel__gallery').scrollLeft += 300;
-    }
+    plusSlides(-1);
   });
 });
+
+nextButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    plusSlides(1);
+  });
+});
+
+let slideIndex = 1;
+showSlides(slideIndex);

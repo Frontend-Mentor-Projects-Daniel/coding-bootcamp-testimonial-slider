@@ -202,6 +202,11 @@ ul {
   background-color: hsl(var(--clr-fig-title), var(--hsla));
 }
 
+/* displays */
+.visible {
+  display: flex !important;
+}
+
 /* text-colour */
 .text-quote {
   color: hsl(var(--clr-quote), var(--hsla));
@@ -256,12 +261,12 @@ ul {
   scroll-behavior: smooth;
 }
 
-.carousel__gallery:focus {
+/* .carousel__gallery:focus {
   outline: 4px solid skyblue;
-}
+} */
 
 /* scrollbar */
-.carousel__gallery::-webkit-scrollbar {
+/* .carousel__gallery::-webkit-scrollbar {
   height: 0.75rem;
 }
 
@@ -271,7 +276,7 @@ ul {
 
 .carousel__gallery::-webkit-scrollbar-thumb {
   color: #000;
-}
+} */
 
 /* gallery ul */
 .gallery {
@@ -282,10 +287,11 @@ ul {
 
 /* cards */
 .card {
+  display: none;
+
   flex: 0 0 100%;
 
   /* display: inline-block; */
-  display: flex;
   justify-content: center;
   white-space: normal;
 
