@@ -107,10 +107,16 @@ select {
 :root {
   --clr-quote: 240, 38%, 20%;
   --clr-fig-title: 240, 18%, 77%;
+  --clr-button: 240, 19%, 60%;
   --hsla: 1;
 }
 
 body {
+  background-image: url('../assets/images/pattern-bg.svg');
+  background-repeat: no-repeat;
+  background-size: 20.4375rem;
+  background-position: center 25%;
+
   font-family: 'Inter', sans-serif;
 }
 
@@ -147,8 +153,20 @@ ul {
 }
 
 @media only screen and (min-width: 48em) {
+  body {
+    background-size: 33rem;
+    background-position: 130% 44%;
+  }
+
   blockquote {
     line-height: 2.75rem;
+  }
+}
+
+@media only screen and (min-width: 75rem) {
+  body {
+    background-size: auto;
+    background-position: 89% 40%;
   }
 }
 
@@ -169,7 +187,7 @@ ul {
   display: flex;
   flex-direction: column;
   min-block-size: 100vh;
-  padding: 1rem;
+  /* padding: 1rem; */
 }
 
 .cover > * {
@@ -202,6 +220,10 @@ ul {
   background-color: hsl(var(--clr-fig-title), var(--hsla));
 }
 
+.bg-button {
+  background-color: hsl(var(--clr-button), var(--hsla));
+}
+
 /* displays */
 .visible {
   display: flex !important;
@@ -214,6 +236,10 @@ ul {
 
 .text-fig-title {
   color: hsl(var(--clr-fig-title), var(--hsla));
+}
+
+.text-button {
+  color: hsl(var(--clr-button), var(--hsla));
 }
 
 /* font weights */
@@ -247,6 +273,11 @@ ul {
 --------------------*/
 /** CAROUSEL */
 .carousel {
+  background-image: url('../assets/images/pattern-curve.svg');
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: 42% 103%;
+  padding-bottom: 10rem;
 }
 
 /** GALLERY */
@@ -254,11 +285,11 @@ ul {
   display: flex;
   justify-content: center;
 
-  overflow-x: scroll;
+  /* overflow-x: scroll;
   scrollbar-color: #000 #eee;
   scrollbar-width: thin;
 
-  scroll-behavior: smooth;
+  scroll-behavior: smooth; */
 }
 
 /* .carousel__gallery:focus {
@@ -313,30 +344,56 @@ ul {
   grid-column: 1/2;
   grid-row: 1/2;
 
+  box-shadow: 0px 12px 46px -7px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 12px 46px -7px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 12px 46px -7px rgba(0, 0, 0, 0.75);
   position: relative;
-  /* z-index: -1; */
 }
 
 .card__image img {
+  border-radius: 5px;
   height: auto;
 }
 
-/** BUTTONS */
+/* buttons */
 .carousel-controls {
   position: absolute;
-  bottom: 0%;
-  right: 58%;
+  bottom: -8%;
+  right: 38%;
 
   display: flex;
 }
 
 .carousel-controls button {
+  background-color: hsl(0, 0%, 100%);
+  border: none;
   cursor: pointer;
+  padding: 1rem;
 }
 
+.carousel-controls button:hover {
+  background-color: lightgray;
+}
+
+.carousel-controls button.previous {
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+
+.carousel-controls button.next {
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+
+/* text content */
 .card__text {
   grid-column: 1/2;
   grid-row: 3/4;
+
+  background-image: url('../assets/images/pattern-quotes.svg');
+  background-repeat: no-repeat;
+  background-size: 60px 50px;
+  background-position: center top;
 
   position: relative;
   text-align: center;
@@ -355,9 +412,20 @@ ul {
 }
 
 @media only screen and (min-width: 48em) {
+  .carousel {
+    background-position: 0% 103%;
+
+    padding-bottom: 5rem;
+  }
+
+  .carousel__gallery {
+    background-size: auto;
+    background-position: 90% 90%;
+  }
+
   .card figure {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(2, max-content);
+    grid-template-rows: max-content;
     align-items: center;
     justify-items: start;
   }
@@ -367,16 +435,26 @@ ul {
     grid-row: 1/2;
   }
 
+  .carousel-controls {
+    bottom: -5%;
+    right: 69%;
+  }
+
   .card__text {
     grid-column: 1/3;
     grid-row: 1/2;
+
+    background-size: 120px 100px;
+    background-position: top 7% left 18%;
 
     text-align: start;
   }
 
   .card__name {
     grid-column: 1/2;
-    grid-row: 2/3;
+    grid-row: 1/3;
+    align-self: end;
+    transform: translateY(-300%);
   }
 
   .card__title {
